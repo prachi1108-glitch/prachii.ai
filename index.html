@@ -34,7 +34,7 @@ a{color:inherit}
 
 /* ---------- HERO ---------- */
 .hero{position:relative;height:100svh;min-height:560px;max-height:1200px;overflow:hidden;background:var(--ground);isolation:isolate}
-.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
+.hero canvas{background:var(--ground);position:absolute;inset:0;width:100%;height:100%;display:block;z-index:0}
 .nav{position:absolute;top:0;left:0;right:0;z-index:5;display:flex;justify-content:space-between;align-items:center;
   padding:calc(env(safe-area-inset-top,0px) + 28px) var(--gutter) 0}
 .nav a{font-weight:700;font-size:clamp(13px,1.35vw,20px);letter-spacing:.14em;text-transform:uppercase;text-decoration:none;position:relative;padding:4px 0}
@@ -277,8 +277,8 @@ footer{max-width:1180px;margin:0 auto;padding:28px 0 calc(env(safe-area-inset-bo
   const bar = document.getElementById('bar'), pct = document.getElementById('pct'), loader = document.getElementById('loader');
   const tick = () => { loaded++; const p = Math.round(loaded / total * 100); bar.style.width = p + '%'; pct.textContent = 'Loading ' + p + '%';
     if (loaded >= total) { loader.classList.add('done'); dirty = true; } };
-  const c = new Image(); c.onload = () => { center = c; tick(); }; c.onerror = tick; c.src = 'frames/center.webp';
-  for (let i = 0; i < FRAMES; i++) { const im = new Image(); im.onload = () => { imgs[i] = im; tick(); }; im.onerror = tick; im.src = 'frames/' + i + '.webp'; }
+  const c = new Image(); c.onload = () => { center = c; tick(); }; c.onerror = tick; c.src = 'center.webp';
+  for (let i = 0; i < FRAMES; i++) { const im = new Image(); im.onload = () => { imgs[i] = im; tick(); }; im.onerror = tick; im.src = i + '.webp'; }
 
   /* ---- pointer ---- */
   let mx = innerWidth / 2, my = innerHeight / 2;
@@ -294,6 +294,7 @@ footer{max-width:1180px;margin:0 auto;padding:28px 0 calc(env(safe-area-inset-bo
     const ir = SRC_W / SRC_H; let dw, dh, dx, dy;
     if (W / H > ir) { dw = W; dh = W / ir; dx = 0; dy = (H - dh) / 2; } else { dh = H; dw = H * ir; dx = (W - dw) / 2; dy = 0; }
     geo = { W, H, dpr, dw, dh, dx, dy, fx: dx + FACE_X / SRC_W * dw, fy: dy + FACE_Y / SRC_H * dh };
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0); ctx.fillStyle = '#f9f3f0'; ctx.fillRect(0, 0, W, H);
     placeName(); dirty = true;
   }
 
