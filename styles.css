@@ -152,7 +152,7 @@ footer{max-width:1180px;margin:0 auto;padding:28px 0 calc(env(safe-area-inset-bo
 /* top bar on inner pages */
 .topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--ground) 88%,transparent);
   -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.topbar-inner{max-width:1180px;margin:0 auto;padding:14px var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.topbar-inner{max-width:calc(1180px + 2 * var(--gutter));margin:0 auto;padding:14px var(--gutter);display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .logo{font-family:var(--hand);font-weight:700;font-size:32px;line-height:1;color:var(--rose);text-decoration:none}
 .links{display:flex;gap:clamp(14px,3vw,36px);flex-wrap:wrap}
 .links a{font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;text-decoration:none;position:relative;padding:4px 0}
