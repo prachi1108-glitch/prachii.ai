@@ -257,3 +257,26 @@ footer{max-width:none;margin-inline:max(var(--gutter),calc(50% - 590px))}
 .principles{list-style:none;padding:0 !important}
 .principles li{padding:14px 0;border-bottom:1px solid var(--line);margin:0 !important}
 .principles b{color:var(--rose)}
+
+/* ---- results: KPIs, bar chart, Insights proof ---- */
+.results{max-width:1180px;margin:0 auto;border-top:1px solid var(--line)}
+.kpi-note{margin:14px 0 20px;font-family:var(--mono);font-size:12px;letter-spacing:.06em}
+.kpis{grid-template-columns:repeat(auto-fit,minmax(170px,1fr))}
+.results-grid{margin-top:48px;display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(28px,5vw,64px);align-items:start}
+.chart-title{margin:0 0 18px;font-size:20px;font-weight:700}
+.bars{list-style:none;margin:0;padding:0;display:grid;gap:16px}
+.bars li{display:grid;grid-template-columns:minmax(0,1fr) 64px;grid-template-areas:"label val" "track track";gap:6px 12px;align-items:end}
+.bar-label{grid-area:label;min-width:0}
+.bar-label b{display:block;font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-label span{font-size:13px;color:var(--muted)}
+.bar-val{grid-area:val;text-align:right;font-weight:800;font-size:18px;font-variant-numeric:tabular-nums}
+.bar-track{grid-area:track;height:14px;background:var(--line);border-radius:4px;overflow:hidden}
+.bar-fill{height:100%;background:var(--rose);border-radius:0 4px 4px 0}
+.bars li:hover .bar-fill{background:var(--ink)}
+.chart-note{margin-top:16px;font-size:13px}
+.proof{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.proof figure{margin:0}
+.proof img{display:block;width:100%;height:auto;border-radius:18px;border:1px solid var(--line);box-shadow:0 18px 40px -22px rgba(43,29,25,.35)}
+.proof figcaption{margin-top:8px;font-size:12px;color:var(--muted);font-family:var(--mono);letter-spacing:.04em}
+.proof-date{margin-top:20px;font-size:13px}
+@media (max-width:860px){ .results-grid{grid-template-columns:1fr} }
