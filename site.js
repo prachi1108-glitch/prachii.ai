@@ -26,3 +26,19 @@
     });
   });
 })();
+/* ---- Instagram reel player (official Instagram embed in a dialog) ---- */
+(() => {
+  const modal = document.getElementById('reelModal'); if (!modal) return;
+  const frame = modal.querySelector('.reel-frame'), open = modal.querySelector('.reel-open');
+  const close = () => { frame.innerHTML = ''; if (modal.open) modal.close(); };
+  document.querySelectorAll('[data-reel]').forEach(btn => btn.addEventListener('click', () => {
+    const code = btn.dataset.reel;
+    frame.innerHTML = `<iframe src="https://www.instagram.com/reel/${code}/embed/" title="Instagram reel" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen loading="lazy"></iframe>`;
+    open.href = `https://www.instagram.com/reel/${code}/`;
+    document.body.classList.add('reel-open-now');
+    if (modal.showModal) modal.showModal(); else window.open(open.href, '_blank');
+  }));
+  modal.querySelector('.reel-close').addEventListener('click', close);
+  modal.addEventListener('click', e => { if (e.target === modal) close(); });
+  modal.addEventListener('close', () => { frame.innerHTML = ''; document.body.classList.remove('reel-open-now'); });
+})();
