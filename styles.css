@@ -316,3 +316,4 @@ footer{max-width:none;margin-inline:max(var(--gutter),calc(50% - 590px))}
   .reel-track li:nth-child(n+13){display:none}
 }
 .reel-open-now .reel-track{animation-play-state:paused}
+.ig-link{max-width:1180px;margin:28px auto 0}
