@@ -317,3 +317,16 @@ footer{max-width:none;margin-inline:max(var(--gutter),calc(50% - 590px))}
 }
 .reel-open-now .reel-track{animation-play-state:paused}
 .ig-link{max-width:1180px;margin:28px auto 0}
+
+/* ---- LinkedIn feed ---- */
+.li-section{padding-top:0;border-top:0}
+.li-grid{list-style:none;margin:36px 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;align-items:start}
+.li-card{display:flex;flex-direction:column;gap:12px;width:100%;text-align:left;padding:22px;border:1px solid var(--line);border-radius:22px;background:var(--paper);
+  color:var(--ink);font:inherit;cursor:pointer;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s}
+.li-card:hover,.li-card:focus-visible{transform:translateY(-4px);box-shadow:0 18px 40px -24px rgba(43,29,25,.35)}
+.li-card img{width:calc(100% + 44px);margin:-22px -22px 4px;aspect-ratio:16/10;object-fit:cover;border-radius:22px 22px 0 0;display:block}
+.li-date{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--rose)}
+.li-text{font-size:16px;line-height:1.55;white-space:pre-line;display:-webkit-box;-webkit-line-clamp:7;-webkit-box-orient:vertical;overflow:hidden}
+.li-card.has-img .li-text{-webkit-line-clamp:4}
+.li-more{margin-top:auto;font-weight:700;font-size:13px;letter-spacing:.1em;text-transform:uppercase}
+.reel-modal[data-kind="li"]{max-width:min(560px,94vw)}
