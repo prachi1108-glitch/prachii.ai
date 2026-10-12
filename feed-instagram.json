@@ -1,6 +1,10 @@
 {
- "updated": "2026-10-09",
+ "updated": "2026-10-12",
  "reels": [
+  {
+   "code": "DeZlBksCUUr",
+   "caption": "I guess I'm a pro now"
+  },
   {
    "code": "DeRuo43izEX",
    "caption": "Posters like this need Photoshop, right?"
@@ -44,10 +48,6 @@
   {
    "code": "DcjNnS7CSrp",
    "caption": "Use any custom image as a Canva frame."
-  },
-  {
-   "code": "DcYUqqNiT9o",
-   "caption": "Wait till the end."
   }
  ]
 }
