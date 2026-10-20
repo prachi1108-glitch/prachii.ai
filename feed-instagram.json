@@ -1,6 +1,10 @@
 {
- "updated": "2026-10-18",
+ "updated": "2026-10-20",
  "reels": [
+  {
+   "code": "DeuEnOti537",
+   "caption": "Cadbury ki chocolate toh bik jaayegi… par tumhara padosi maanega bhi?"
+  },
   {
    "code": "DeZlBksCUUr",
    "caption": "I guess I'm a pro now"
@@ -44,10 +48,6 @@
   {
    "code": "Dc1DcCBwlRn",
    "caption": "You've seen this animated travel map in a hundred reels… but did you know you…"
-  },
-  {
-   "code": "DctTHeXiYPL",
-   "caption": "You’re probably doing this Canva effect the hard way"
   }
  ]
 }
