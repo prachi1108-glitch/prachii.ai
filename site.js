@@ -65,3 +65,17 @@
   modal.addEventListener('click', e => { if (e.target === modal) close(); });
   modal.addEventListener('close', () => { frame.innerHTML = ''; document.body.classList.remove('reel-open-now'); });
 })();
+
+/* ---- Meta Pixel events ---- */
+(() => {
+  const track = (ev, data) => { try { if (window.fbq) fbq('track', ev, data || {}); } catch (e) {} };
+  if (/^\/work-/.test(location.pathname)) track('ViewContent', { content_name: document.title.replace(/ \| Prachi$/, ''), content_category: 'Case study' });
+  document.addEventListener('click', e => {
+    const t = e.target.closest && e.target.closest('a, button');
+    if (!t) return;
+    const href = t.getAttribute('href') || '';
+    if (t.matches('[data-copy]') || href.startsWith('mailto:')) track('Contact', { method: 'email' });
+    else if (t.classList.contains('cta') || (/contact(\.html)?$/.test(href) && t.closest('.band, .hero'))) track('Lead', { content_name: (t.textContent || '').trim().slice(0, 40) });
+    else if (/instagram\.com|linkedin\.com/.test(href)) track('Contact', { method: /instagram/.test(href) ? 'instagram' : 'linkedin' });
+  });
+})();
